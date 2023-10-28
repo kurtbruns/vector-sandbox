@@ -1,0 +1,53 @@
+
+:root {
+
+  /* --background: #181818;
+  --font-color: #f0f0f0;
+  --main: #f0f0f0; 
+
+  --grid-primary: #666666;
+  --grid-secondary: #404040;
+  --grid-tertiary: #333333;
+  --grid-tertiary: #262626; */
+
+  /* --background: #101010;
+  --grid-primary: #404040;
+  --grid-secondary: #303030;
+  --grid-tertiary: #202020; */
+
+  --background: #101010;
+  --grid-primary: #505050;
+  --grid-secondary: #404040;
+  --grid-tertiary: #303030;
+  
+  --red: #F2777A;
+  --green: #92D192;
+  --blue: #6AB0F3;
+
+}
+
+.grid-lines {
+  stroke-width: 1.5px;;
+}
+
+.axes {
+  stroke: #a0a0a0;
+}
+
+.light-theme .tex {
+  color: var(--font-color)
+}
+
+.blue {
+  stroke: var(--blue);
+}
+
+.blue1 {
+  stroke: var(--blue);
+  opacity: 0.8;
+}
+
+.blue2 {
+  stroke: var(--blue);
+  opacity: 0.4;
+}
