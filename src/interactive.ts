@@ -188,8 +188,8 @@ class ExampleScene extends Scene {
 }
 
 const example = new ExampleScene();
-// example.setMode(SceneMode.Live);
-// example.start();
+example.setMode(SceneMode.Live);
+example.start();
 
 // downloadSceneZip(example)
 
