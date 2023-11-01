@@ -12,7 +12,6 @@ import downloadLight from '@/images/download.dark.svg';
 import downloadDark from '@/images/download.light.svg';
 import { ExportTarget, Scene, SceneMode, download, saveAs } from '@kurtbruns/vector';
 import html2canvas from 'html2canvas';
-import JSZip from 'jszip';
 
 let controls = document.querySelector('.controls');
 controls.classList.add('no-select');
@@ -50,7 +49,9 @@ if (window.matchMedia) {
 downloadButton.onclick = () => {
     let frame = document.querySelector('#root').firstElementChild as SVGElement;
     download(frame, `interactive.svg`, ExportTarget.FIGMA);
+};
 
+(window as any).downloadAsPNG = () => {
     // Save image with html2canvas
     html2canvas(document.querySelector('#root'), { scale: 4 })
         // html2canvas(document.querySelector('#root'))
@@ -62,4 +63,4 @@ downloadButton.onclick = () => {
         .catch(function (error) {
             console.error(error);
         });
-};
+}
