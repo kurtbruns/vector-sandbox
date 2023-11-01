@@ -18,7 +18,11 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["eslint:recommended", "prettier", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module"

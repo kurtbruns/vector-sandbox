@@ -1,10 +1,8 @@
 # Vector Sandbox
 
-This is a sandbox environment (code space) for the [vector library](https://github.com/kurtbruns/vector.git). It's based on Tania Rascia's [Webpack boilerplate](https://github.com/taniarascia/webpack-boilerplate).
+This is a sandbox environment for the [vector library](https://github.com/kurtbruns/vector.git). 
 
-Currently, this is a place to consume the vector library in different ways to test things out while developing them.
-
-**Note:** The library is currently linked and not installed as a dependency.
+**Note:** To link a local version with unpublished changes:
 
 ```
 npm link @kurtbruns/vector
