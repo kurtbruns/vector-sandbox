@@ -1,7 +1,5 @@
-
 :root {
-
-  /* --background: #181818;
+    /* --background: #181818;
   --font-color: #f0f0f0;
   --main: #f0f0f0; 
 
@@ -10,24 +8,45 @@
   --grid-tertiary: #333333;
   --grid-tertiary: #262626; */
 
-  /* --background: #101010;
+    /* --background: #101010;
   --grid-primary: #404040;
   --grid-secondary: #303030;
   --grid-tertiary: #202020; */
 
-  --background: #101010;
-  --grid-primary: #505050;
-  --grid-secondary: #404040;
-  --grid-tertiary: #303030;
-  
-  --red: #F2777A;
-  --green: #92D192;
-  --blue: #6AB0F3;
+  --font-color-subtle: #d0d0d0;
 
+  --background: #101010;
+  --background-contrast: #282828;
+  --background-contrast2: #202020;
+
+  --medium: #808080;
+
+  --grid-primary: #505050;
+  --grid-secondary: #303030;
+  --grid-tertiary: #202020;
+
+  --grid-quaternary: #e7e4e4;
+  --grid-quinary: #181818;
+
+  --red: #f2777a;
+  --green: #92d192;
+  --blue: #6ab0f3;
+  --purple: #db94ff;
+  --yellow: #fff888;
+  --primary: #fff888;
+  
+  --muted-purple: #4c3656;
+  --muted-yellow: #807c45;
+  --muted-green: #694a7c;
+  --muted-primary: #404040;
+}
+
+:root.light-theme {
+  --background-contrast: #f0f0f0;
 }
 
 .grid-lines {
-  stroke-width: 1.5px;;
+  stroke-width: 1.5px;
 }
 
 .axes {
@@ -35,7 +54,11 @@
 }
 
 .light-theme .tex {
-  color: var(--font-color)
+  color: var(--font-color);
+}
+
+.blue-axes {
+  stroke: #bedfff;
 }
 
 .blue {
@@ -44,10 +67,57 @@
 
 .blue1 {
   stroke: var(--blue);
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .blue2 {
   stroke: var(--blue);
-  opacity: 0.4;
+  opacity: 0.3;
+}
+
+.blue3 {
+  stroke: var(--blue);
+  opacity: 0.15;
+}
+
+.player {
+  margin: 1rem 0 2rem 0;
+}
+
+.player .controls {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  flex-direction: row;
+  background: var(--background-contrast);
+}
+
+.player .controls div {
+  display: flex;
+}
+
+.player .controls button {
+  border-style: none;
+  background: var(--background-contrast);
+  width: 48px;
+  height: 48px;
+}
+
+.player .controls button:hover {
+  background: var(--background-contrast2);
+}
+
+.player .controls .middle {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  justify-content: space-around;
+  margin: 0 1rem;
+  width: 100%;
+}
+
+
+.player .controls .middle::selection {
+  background: #404040;
+  color: var(--font-color);      /* Black text */
 }
