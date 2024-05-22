@@ -50,7 +50,6 @@ npm uninstall @kurtbruns/vector && npm link @kurtbruns/vector
 
 I've recently been installing the vector library in the `src` directory to get all the benefits of using the VSCode editor. To install the latest version:
 
-
 TODO: test install script
 
 ```
@@ -74,3 +73,5 @@ To change the import statements from *local* to *external*:
 ```
 ./scripts/install_all_library.sh
 ```
+
+Uncomment the line `/src/vector/` in the `.gitignore` to jump to files faster.
