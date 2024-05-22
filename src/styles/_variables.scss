@@ -1,5 +1,22 @@
+:root {
+    --background: #000000;
+    --background-contrast: #202020;
+    --highlight-subtle: #404040;
+    --font-color-subtle: #c0c0c0;
+    --medium: #808080;
+}
+
+:root.light-theme {
+    --background: #f8f8f8;
+    --background-contrast: #d0d0d0;
+    --background-darker: #a0a0a0;
+    --highlight-subtle: #b8b8b8;
+    --font-color-subtle: #808080;
+}
+
 $font-size: 1rem;
 $font-family: 'Inter', sans-serif;
 $background-color: var(--background);
 $font-color: var(--font-color);
-$page-width: 960px;
+$page-width: 960px + 32px;
+

@@ -1,7 +1,5 @@
 import '@/styles/index.scss';
 
-import '@kurtbruns/vector/dist/vector.css';
-
 import '@/styles/theme.css';
 
 import toggleLight from '@/images/toggle-light.svg';
@@ -29,20 +27,68 @@ const toggleIcon = document.createElement('img');
 toggleIcon.draggable = false;
 toggleButton.append(toggleIcon);
 
-const updateTheme = (isDark) => {
+function updateTheme(isDark: boolean) {
     document.documentElement.classList.toggle('light-theme', !isDark);
     toggleIcon.src = isDark ? toggleLight : toggleDark;
     downloadIcon.src = isDark ? downloadLight : downloadDark;
+    sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
+
 };
 
-toggleIcon.onclick = () => updateTheme(toggleIcon.src === toggleDark);
+// Initialize the theme mode
+function initializeTheme(): boolean {
 
-// Initialize theme if the user has specified light / dark, otherwise default to dark theme
-if (window.matchMedia) {
-    const darkSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    darkSchemeMediaQuery.addEventListener('change', (e) => updateTheme(e.matches));
-    updateTheme(darkSchemeMediaQuery.matches);
+    // Check if there is a mode already set
+    const theme = sessionStorage.getItem('theme');
+    let isDark = true;
+    if (theme !== null && theme === 'light') {
+        isDark = false;
+    }
+
+    // Use the user's operating system theme as default
+    if (window.matchMedia) {
+        const darkSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkSchemeMediaQuery.addEventListener('change', (e) => updateTheme(e.matches));
+        if (theme === null) {
+            isDark = darkSchemeMediaQuery.matches;
+        }
+    }
+
+    document.documentElement.classList.toggle('light-theme', !isDark);
+
+    return isDark;
 }
+
+// On a fresh page load initialize the theme
+let mode = initializeTheme();
+
+// Register the event handler for the theme mode button
+window.addEventListener('load', (event) => {
+    toggleIcon.onclick = () => {
+        updateTheme(!(sessionStorage.getItem('theme') === 'dark'))
+    };
+})
+
+// Update the theme accordingly
+window.addEventListener('pageshow', function (event) {
+
+    let isDark: boolean;
+
+    // Page was loaded from bfcache. This causes a screen flash and could be avoided by instead 
+    // preventing the page from being cached with something like `window.onunload = function() {};`
+    // However, assuming that people are not willy nilly changing the theme, it seems like taking
+    // advantage of the lightning fast page load from bfcache is a better user experience.
+    if (event.persisted) {
+        isDark = initializeTheme();
+    } else {
+        isDark = mode;
+    }
+
+    updateTheme(isDark)
+
+    document.documentElement.classList.remove('temporary');
+
+});
 
 downloadButton.onclick = () => {
     let frame = document.querySelector('#root');
