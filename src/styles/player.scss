@@ -1,0 +1,47 @@
+.player {
+    margin: 1rem 0 2rem 0;
+}
+
+.player .controls {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    flex-direction: row;
+    background: var(--background-contrast);
+}
+
+.player div {
+    display: flex;
+    overflow: hidden;
+}
+
+.player div svg:first-of-type {
+    display: block;
+    margin: auto;
+    /* overflow: visible; */
+}
+
+.player .controls button {
+    border-style: none;
+    background: var(--background-contrast);
+    width: 48px;
+    height: 48px;
+}
+
+.player .controls button:hover {
+    background: var(--highlight-subtle);
+}
+
+.player .controls .middle {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1;
+    justify-content: space-around;
+    margin: 0 1rem;
+    width: 100%;
+}
+
+.player .controls .middle::selection {
+    background: var(--highlight-subtle);
+    color: var(--medium); /* Black text */
+}

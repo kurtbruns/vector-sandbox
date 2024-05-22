@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Change current file to import from relative",
+        "type": "shell",
+        "command": "./scripts/import_current_relative.sh",
+        "args": [
+            "${fileDirname}",
+            "${file}"
+          ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Change ALL files to import from relative",
+        "type": "shell",
+        "command": "bash",
+        "args": [
+          "-c",
+          "cd ${workspaceFolder}/src && ../scripts/import_all_relative.sh"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Change ALL files to import from library",
+        "type": "shell",
+        "command": "bash",
+        "args": [
+          "-c",
+          "cd ${workspaceFolder}/src && ../scripts/import_all_library.sh"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+    ]
+  }

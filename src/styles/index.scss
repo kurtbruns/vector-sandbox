@@ -6,20 +6,21 @@
 @import 'normalize';
 @import 'variables';
 @import 'scaffolding';
+@import 'player';
 
-.page-controls {
-  position: absolute;
-  user-select: none;
-  right: 1rem;
-  top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+#root {
+  margin-top: 2.5rem;
+  padding: 0 1rem;
 }
 
-// .controls:hover {
-//   cursor:pointer;
-// }
+.page-controls {
+  position: fixed;
+  user-select: none;
+  right: 1.5rem;
+  top: 1.5rem;
+
+  gap: 1rem;
+}
 
 .icon-button img {
   user-select: none;

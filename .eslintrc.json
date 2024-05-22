@@ -11,7 +11,8 @@
     "import/prefer-default-export": 0,
     "arrow-body-style": 1,
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "quotes": ["error", "backtick"]
   },
   "ignorePatterns": ["dist", "node_modules", "webpack.*", "config/paths.js"],
   "env": {

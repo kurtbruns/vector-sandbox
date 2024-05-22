@@ -1,3 +1,4 @@
-import { ExampleScene } from "./ExampleScene";
+import { ExampleScene } from './ExampleScene';
 
 new ExampleScene();
+ 

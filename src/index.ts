@@ -1,4 +1,3 @@
 
 import './initialize';
-
-import './main'
+import './main';

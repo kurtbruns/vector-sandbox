@@ -1,7 +1,6 @@
-import { CoordinateSystem } from "@kurtbruns/vector";
+import { CoordinateSystem } from '@kurtbruns/vector';
 
 interface ExampleSceneConfig {
-    root?: HTMLElement;
     width?: number;
     height?: number;
 }
@@ -9,34 +8,25 @@ interface ExampleSceneConfig {
 export class ExampleScene extends CoordinateSystem {
     constructor(config: ExampleSceneConfig = {}) {
 
-        let width = 720;
-        let aspectRatio = 16/9;
         let defaultConfig: ExampleSceneConfig = {
-            width: 720,
-            height: width/aspectRatio,
+            width: 640,
+            height: 360,
         };
 
         config = { ...defaultConfig, ...config };
 
         super({
-            root: document.querySelector('#root'),
             width: config.width,
             height: config.height,
-            gridWidth: 2*Math.PI,
-            gridHeight: 2*Math.PI/aspectRatio,
+            gridWidth: 16,
+            gridHeight: 9,
             drawAxes: true,
             axesColor: 'var(--font-color)',
             // axesArrows: true,
             // axesLabels: false,
             drawGrid: true,
             big: true,
-            half: false
         });
-
-        // this.plot.drawGridLines(
-        //     ['half', 'big'],
-        //     ['half', 'big'],
-        // );
 
         let border = this.frame.rect(0,0, this.width, this.height)
         .setAttribute('stroke', 'var(--medium-color)')

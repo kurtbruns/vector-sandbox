@@ -1,5 +1,8 @@
 **/.DS_Store
-_archive
 **/*.ignore.ts
+/_archive
 /node_modules
 /dist
+
+/src/vector/
+/src/3b1b/

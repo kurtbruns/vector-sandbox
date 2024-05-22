@@ -1,5 +1,5 @@
 :root {
-    --background: #000000;
+    --background: #2d2d2d;
     --background-contrast: #202020;
     --highlight-subtle: #404040;
     --font-color-subtle: #c0c0c0;
@@ -8,10 +8,11 @@
 
 :root.light-theme {
     --background: #f8f8f8;
-    --background-contrast: #d0d0d0;
+    --background-contrast: #e0e0e0;
     --background-darker: #a0a0a0;
-    --highlight-subtle: #b8b8b8;
+    --highlight-subtle: #d0d0d0;
     --font-color-subtle: #808080;
+    --test: #6d79eb;
 }
 
 $font-size: 1rem;

@@ -7,7 +7,7 @@ This is a sandbox environment for the [vector library](https://github.com/kurtbr
 Clone this repo and npm install.
 
 ```bash
-npm i
+npm install
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ npm i
 npm start
 ```
 
-You can view the development server at `localhost:8080`.
+You can view the development server at `localhost:4040`.
 
 ### Production build
 
@@ -32,16 +32,45 @@ npm run build
 npm i -g http-server
 ```
 
-You can view the deploy by creating a server in `dist`.
+You can view the deployment by creating a server in `dist`.
 
 ```bash
 cd dist && http-server
 ```
 
-### Link Vector Locally
+## Local vs. external Library
 
-**Note:** To link a local version with unpublished changes run the following command. I like to also uninstall the current version in case you add any depenencies and the link is blown away leading to confusion.
+If you have a local version of the `vector` library that you want to use you can link it with the following command. I also like to uninstall the library as a dependency so that if you make any changes with npm, it doesn't lead to confusion on which library is being used.
 
 ```
 npm uninstall @kurtbruns/vector && npm link @kurtbruns/vector
+```
+
+### Live reloads
+
+I've recently been installing the vector library in the `src` directory to get all the benefits of using the VSCode editor. To install the latest version:
+
+
+TODO: test install script
+
+```
+./scripts/install_local.sh
+```
+
+To install a specific version:
+
+```
+./scripts/install-local.sh 0.7.1
+```
+
+To change the import statements from *external* to *local*:
+
+```
+./scripts/install_all_relative.sh
+```
+
+To change the import statements from *local* to *external*:
+
+```
+./scripts/install_all_library.sh
 ```
