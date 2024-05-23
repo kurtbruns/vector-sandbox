@@ -29,7 +29,7 @@
         "command": "bash",
         "args": [
           "-c",
-          "cd ${workspaceFolder}/src && ../scripts/import_all_relative.sh"
+          "cd ${workspaceFolder}/src && ../scripts/import_all_relative.sh ${workspaceFolder}"
         ],
         "group": {
           "kind": "build",

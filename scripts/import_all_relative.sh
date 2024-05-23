@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get the workspace folder from the argument
+workspaceFolder=$1
+
 # Print the current working directory
 # echo "Current working directory: $(pwd)"
 
@@ -19,8 +22,9 @@ find_vector_src() {
 # Find the absolute path to the 'vector/src' directory
 vector_src_path=$(find_vector_src)
 
-if [ -z "$vector_src_path" ]; then
-  echo "Error: 'vector/src' directory not found."
+# Verify that the vector/src path is within the workspaceFolder
+if [[ $vector_src_path != ${workspaceFolder}* ]]; then
+  echo "Error: 'vector/src' directory not found within the workspaceFolder."
   exit 1
 fi
 

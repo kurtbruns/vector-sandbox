@@ -59,6 +59,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@kurtbruns/vector": "^0.7.5"
+    "@kurtbruns/vector": "^0.7.6"
   }
 }

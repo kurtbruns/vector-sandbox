@@ -34,8 +34,15 @@ if (window.matchMedia) {
 }
 
 
-import { ExportTarget, Player, Scene, SceneMode, bundle, saveAs } from '@kurtbruns/vector';
+import { ExportTarget, Player, Scene, SceneMode, bundle, download, saveAs } from '@kurtbruns/vector';
 import JSZip from "jszip";
+
+(window as any).downloadSVG = (id:string) => {
+    
+    let element : any = document.getElementById(id) ;
+    
+    download(element as SVGSVGElement, `${id}.svg`, ExportTarget.FIGMA);
+}
 
 // Add export functionality to download button
 Player.setDefaultDownloadCallback((scene:Scene) => {
