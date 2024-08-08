@@ -65,13 +65,15 @@ To install a specific version:
 To change the import statements from *external* to *local*:
 
 ```
-./scripts/install_all_relative.sh
+./scripts/import_all_local.sh
 ```
+
+Uncomment the line `/src/vector/` in the `.gitignore` to jump to files faster.
+
+### Archiving Repository
 
 To change the import statements from *local* to *external*:
 
 ```
-./scripts/install_all_library.sh
+./scripts/import_all_external.sh
 ```
-
-Uncomment the line `/src/vector/` in the `.gitignore` to jump to files faster.
