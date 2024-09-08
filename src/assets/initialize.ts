@@ -2,10 +2,10 @@
  * Initializes the sandbox environment
  */
 
-import '@/styles/index.scss';
+import '@/assets/styles/index.scss';
 
-import toggleLight from '@/images/toggle-light.svg';
-import toggleDark from '@/images/toggle-dark.svg';
+import toggleLight from '@/assets/images/toggle-light.svg';
+import toggleDark from '@/assets/images/toggle-dark.svg';
 
 let controls = document.querySelector('.page-controls') as HTMLElement;
 controls.style.userSelect = 'none';

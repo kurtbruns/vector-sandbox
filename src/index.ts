@@ -1,3 +1,3 @@
 
-import './initialize';
+import './assets/initialize';
 import './main';
