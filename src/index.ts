@@ -1,3 +1,2 @@
-
 import './assets/initialize';
-import './main';
+import './examples';

@@ -4,4 +4,9 @@
 /node_modules
 /dist
 
-/src/vector/
+# Un-comment the following line for better intellisense for local install
+# /src/vector/
+
+# Keep these no matter what
+/src/vector/dist/
+/src/vector/node_modules/
